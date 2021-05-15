@@ -1,0 +1,215 @@
+ <!DOCTYPE html>
+<head>
+    <title>Heart Disease </title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Orelega+One&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" />
+    <style>
+        *{
+	box-sizing: border-box;
+}
+.container{
+	background-image: url("https://www.pixelstalk.net/wp-content/uploads/2016/04/Grey-backgrounds-wallpapers-HD.png");
+    /* background-position: center; */
+    margin: 0;
+    width: 100%;
+    /* background-size: cover; */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+.info-wrapper{
+	width: 60%;
+    background-color:#edf0f7;
+    padding: 55px 45px;
+    margin: 0 auto;
+    color: black;
+    display: block;
+    border:2px solid;
+}
+
+.factor{
+	padding: 4px 3px 2px 3px;
+	margin: 10px auto;
+    width:250px;
+    height: 35px;
+    border-radius: 5px;
+}
+
+.rad{
+  margin-left: 56%;
+}
+
+h1, body{
+	margin: 0;
+}
+
+h1{
+	text-align: center;
+	font-family: 'Orelega One', cursive;
+	font-size: 55px;
+	padding: 5%;
+}
+.info-wrapper div{
+	/* display: inline-block; */
+	width: 100%;
+}
+.row{
+	    display: flex;
+    align-items: center
+	padding-bottom: 10px;
+	margin-top: 15px;
+}
+.row-label{
+	padding-right: 20%;
+	font-family: 'Roboto', sans-serif;
+	font-size: 17px;
+    font-weight: 600;
+    width: 55%;
+    display: inline-block;
+}
+
+.but{
+	padding: 12px 18px;
+  color: black;
+    display: block;
+    width: 100%;
+    margin: 0;
+    margin-top: 10px;
+}
+.head h1,h2 {
+    text-align: center;
+    color:black;
+}
+
+</style>
+
+</head>
+
+<body>
+    <nav>
+        <div class="wrapper">
+          <div class="logo">
+            <h3>Plectrum</h3>
+          </div>
+          <ul class="nav-link">
+            <li><a href="#Home" class="box active">Home</a></li>
+            <li><a data-scroll href="#About_Us" class="box">About Us</a></li>
+            <li><a data-scroll href="#Features" class="box">Features</a></li>
+            <li><a data-scroll href="#contact" class="box">Contact</a></li>
+          </ul>
+          <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+          </div>
+        </div>
+      </nav>
+	<div class="container">
+    <div class="head">
+    <h1>Heart Disease Prediction</h1>
+    <h2>Fight for every heart beat...</h2>
+    </div>
+    <form  class="info-wrapper" action="/predict" method="post">
+        <div class="row">
+        	<label class="row-label" for="age">Age:</label>
+            <input type="text" id="age"class="factor" name="age" />
+        </div>
+        <div class="row">
+        	<label class="row-label">Sex:</label>
+        	<input type="radio" id="male" name="sex" value="0">
+            <label for="male">Male</label>
+            <input class="rad" type="radio" id="female" name="sex" value="1">
+            <label for="female">Female</label>
+        </div>
+        <!-- <input type="r" class="factor" name="sex" placeholder="Sex"/> -->
+        <div class="row">
+            <label class="row-label" for="cp">Chest Pain:</label>
+
+            <select id="cp" name="cp">
+                  <option value="3">typical angina</option>
+                  <option value="1">atypical angina</option>
+                  <option value="2">non anginal</option>
+                  <option value="0">Asymptomatic</option>
+            </select>
+        </div>
+        <div class="row">
+        	<label class="row-label" for="trestbps">Resting Blood Pressure:</label>
+            <input type="text" id="trstbps" class="factor" name="trestbps"/>
+        </div>
+        <div class="row">
+        	<label class="row-label" for="chol">Cholestrol:</label>
+        	<input type="text" id="chol" class="factor" name="chol"/>
+        </div>
+        <div class="row">
+        	<label class="row-label">Fasting Blood Sugar</label>
+        	<input type="radio" id="above" name="fbs" value="1">
+            <label for="above">Fbs>120mg/dl</label>
+            <input class="rad" type="radio" id="below" name="fbs" value="0">
+            <label for="below">Fbs<120mg/dl</label>
+        </div>
+        <div class="row">
+        	<label class="row-label">Resting ECG</label>
+            <input type="radio" id="hypertrophy" name="restecg" value="0">
+            <label for="hypertrophy">Left ventricular hypertrophy</label>
+        	<input class="rad" type="radio" id="normal" name="restecg" value="1">
+            <label for="normal">Normal value</label>
+            <input class="rad" type="radio" id="abnormal" name="restecg" value="2">
+            <label for="abnormal">Having ST-T wave abnormality</label>
+        </div>
+        <div class="row">
+        	<label class="row-label" for="Thalach">Maximum heartrate achieved</label>
+            <input type="text" id="thalach"class="factor" name="thalach" />
+        </div>
+        <div class="row">
+        	<label class="row-label">Discrete Exercise induced angina:</label>
+            <input type="radio" id="Yes" name="exang" value="1">
+            <label for="Yes">Yes</label>
+            <input class="rad" type="radio" id="No" name="exang" value="0">
+            <label for="No">No</label>
+        </div>
+        <div class="row">
+        	<label class="row-label" for="oldpeak">Old peak ST Depression :</label>
+            <input  type="text" id="oldpeak" class="factor" name="oldpeak" />
+        </div>
+        <div class="row">
+            <label class="row-label" for="slope">The slope of the peak Exercise segment :</label>
+
+            <select id="slope" name="slope">
+              <option value="1">Up Slope</option>
+              <option value="2">Flat</option>
+              <option value="0">Down Slope</option>
+            </select>
+        </div>
+        <div class="row">
+            <label class="row-label" for="ca">Number of major vessels coloured by
+                fluoroscopy that ranged between 0 and 3.
+            </label>
+
+            <select id="ca" name="ca">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+        </div>
+        <div class="row">
+            <label class="row-label" for="thal">Thalium stress test result:</label>
+
+            <select id="thal" name="thal">
+              <option value="1">Fixed Defect</option>
+              <option value="0">NA</option>
+              <option value="2">Normal</option>
+              <option value="3">Reversible Defect</option>
+            </select>
+        </div>
+        <div class="row">
+        	<button class="btn btn-large btn-outline-secondary but " type="submit">Predict</button>
+        </div>
+    </form>
+   </div>
+   {{ prediction_text }}
+</body>
+</html>

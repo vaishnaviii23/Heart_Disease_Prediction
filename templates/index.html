@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HealthyLife</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equip="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Hind+Madurai:wght@300&family=Poppins:wght@100;300;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" />
+    <!-- <link rel="stylesheet"href="../static/index.css"; -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </head>
+  <body>
+    <!-- Navigation bar -->
+
+    <header>
+      <nav>
+        <div class="wrapper">
+          <div class="logo">
+            <h3>HealthyLife</h3>
+          </div>
+          <ul class="nav-link">
+            <li><a href="#Home" class="box active">Home</a></li>
+            <li><a data-scroll href="#About_Us" class="box">About Us</a></li>
+
+          </ul>
+          <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+          </div>
+        </div>
+      </nav>
+      <div class="banner">
+        <div class="bg-video">
+
+        <img style="width:210vh; background-size: cover;height:100vh;" src="https://media1.giphy.com/media/godMk62fXqpgY/giphy.gif" />
+
+        </div>
+        <form action="/home1" method="POST">
+        <div class="wrapper">
+          <div class="banner-content">
+            <h1>Lets defeat,<br>Keep a healthy <br> heart beat!!</h1><br><br><br>
+<button class="btn btn-large btn-outline-success" type="submit">
+  Analyse now
+</button>
+            <!-- <a href="home.html" class="btn">Know more</a> -->
+          </div>
+        </div>
+    </form>  </div>
+
+    </header>
+    <section class="about-us" id="About_Us">
+      <div class="wrapper">
+        <h2>About Us</h2>
+        <p style="font-size: 19px;"><img src="https://image.freepik.com/free-photo/crop-doctor-man-hearing-with-stethoscope_23-2147767259.jpg" style="width:350px;height:210px;margin-right:15px;">
+          Heartilife helps you check your chances of heart disease with a tap of a single button. Available 24*7 for any hospitals and people. The system can be used for free heart disease consulting online.
+        </p>
+      </div>
+    </section>
+
+    <!-- <section class="features dark-bg" id="Features">
+      <div class="wrapper">
+        <h2>Features</h2>
+        <ul class="row flip-boxes">
+          <li class="flip-box">
+            <div class="front">
+              <div class="feature-icon">
+                <img src="./images/music-disc.png" />
+              </div>
+              <h4>Playlist</h4>
+            </div>
+            <div class="back">
+              <p class="content">
+                Discover the perfect playlist or create your own playlist.
+              </p>
+            </div>
+          </li>
+
+          <li class="flip-box">
+            <div class="front">
+              <div class="feature-icon">
+                <img src="./images/users.png" />
+              </div>
+              <h4>Various Artists</h4>
+            </div>
+            <div class="back">
+              <p class="content">
+                Enjoy listenening music from your favourite artists around the
+                world
+              </p>
+            </div>
+          </li>
+          <li class="flip-box">
+            <div class="front">
+              <div class="feature-icon">
+                <img src="./images/search.png" />
+              </div>
+              <h4>Browser</h4>
+            </div>
+            <div class="back">
+              <p class="content">
+                Tired of searching musics.Browse your favourite with just one
+                click.
+              </p>
+            </div>
+          </li>
+          <li class="flip-box">
+            <div class="front">
+              <div class="feature-icon">
+                <img src="./images/repeat.png" />
+              </div>
+              <h4>Loop and shuffle tracks</h4>
+            </div>
+            <div class="back">
+              <p class="content">
+                Mix the tracks on the playlist so that they are played in random
+                order or maybe even loop one audio file.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section> -->
+    <!-- <section class="contact" id="contact">
+      <div class="wrapper">
+        <h2>Contact Us</h2>
+        <div class="row">
+          <div class="map" id="map">
+            <iframe
+              width="100%"
+              height="450"
+              frameborder="0"
+              style="border: 0"
+              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAm4ILj_0YB2EiifzX_l7fwDycge0DCjoA&q=Space+Needle,Seattle+WA"
+              allowfullscreen
+            >
+            </iframe>
+          </div>
+          <ul class="content">
+            <li class="icon-wrapper">
+                <span class="fas fa-envelope"></span>
+                <span class="title">Email</span>
+                <a class="value" href="mailto:admin@musicalworld.com">admin@musicalworld.com</a>
+            </li>
+            <li class="icon-wrapper">
+              <span class="fas fa-home"></span>
+              <span class="title">Address</span>
+              <span class="value">Navi Mumbai</a>
+            </li>
+            <li class="icon-wrapper">
+              <span class="fas fa-phone"></span>
+              <span class="title">Phone</span>
+              <a class="value" href="tel:1234567890">1234567890</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section> -->
+    <footer class="dark-bg">
+      <p>© 2021 HealthyLife. All rights reserved</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<head>
+    <title>Heart Disease </title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orelega+One&family=Roboto:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" />
+	<!-- <link href="../static/index.css" /> -->
+</head>
+<style type="text/css">
+
+	div{
+		font-size: 20px;
+	}
+
+	.predict{
+		font-family: Roboto;
+		font-size: 20px;
+		font-weight: bold;
+		margin: 20%;
+	    margin-top: 5%;
+	    padding: 15px;
+	    width: fit-content;
+
+	}
+
+	.predict p{
+		font-family: Roboto;
+		font-size: 20px;
+		display: inline-block;
+	}
+  .prevention{
+    padding: 50px 0;
+    text-align: left;
+  }
+</style>
+<body>
+      <nav>
+        <div class="wrapper">
+          <div class="logo">
+            <h3>HealtyLife</h3>
+          </div>
+          <ul class="nav-link">
+            <li><a href=" " class="box active">Home</a></li>
+            <li><a data-scroll href="#About_Us" class="box">About Us</a></li>
+
+          </ul>
+          <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+          </div>
+        </div>
+      </nav>
+
+    <div class="predict">
+    	Prediction <br>
+    	<p style="text-align:center">{{ prediction_text }}</p>
+
+    {%if output == 1%}
+    <div class="prevention" >
+      <h4><bold>Some of the factors to lower the risk of Heart Disease :</bold></h4>
+      <details>
+        <summary>Control your blood pressure</summary>
+        <p>High blood pressure is a major risk factor for heart disease. It is important to get your blood pressure checked regularly - at least once a year for most adults, and more often if you have high blood pressure. Take steps, including lifestyle changes, to prevent or control high blood pressure.</p>
+      </details>
+      <details>
+        <summary>Keep your cholesterol level under control</summary>
+        <p>High levels of cholesterol can clog your arteries and raise your risk of coronary artery disease and heart attack. Lifestyle changes and medicines (if needed) can lower your cholesterol. </p>
+      </details>
+      <details>
+        <summary>Stay at a healthy weight.</summary>
+        <p>Being overweight or having obesity can increase your risk for heart disease. This is mostly because they are linked to other heart disease risk factors, including high blood cholesterol and triglyceride levels, high blood pressure, and diabetes. Controlling your weight can lower these risks.</p>
+      </details>
+      <details>
+        <summary>Limit alcohol</summary>
+        <p>Drinking too much alcohol can raise your blood pressure. It also adds extra calories, which may cause weight gain. Both of those raise your risk of heart disease. Men should have no more than two alcoholic drinks per day, and women should not have more than one.</p>
+      </details>
+      <details>
+        <summary>Don't smoke</summary>
+        <p>Cigarette smoking raises your blood pressure and puts you at higher risk for heart attack and stroke. If you do not smoke, do not start. If you do smoke, quitting will lower your risk for heart disease. You can talk with your health care provider for help in finding the best way for you to quit.</p>
+      </details>
+      <details>
+        <summary>Manage stress</summary>
+        <p> Stress is linked to heart disease in many ways. It can raise your blood pressure. Extreme stress can be a "trigger" for a heart attack. Also, some common ways of coping with stress, such as overeating, heavy drinking, and smoking, are bad for your heart. Some ways to help manage your stress include exercise, listening to music, focusing on something calm or peaceful, and meditating.</p>
+      </details>
+      <details>
+        <summary>Manage diabetes</summary>
+        <p>Having diabetes doubles your risk of diabetic heart disease. That is because over time, high blood sugar from diabetes can damage your blood vessels and the nerves that control your heart and blood vessels. So, it is important to get tested for diabetes, and if you have it, to keep it under control.</p>
+      </details>
+
+    </div>
+
+
+    {%else%}
+     <p></p>
+
+    {%endif%}
+
+
+
+
+
+    </div>
+</body>

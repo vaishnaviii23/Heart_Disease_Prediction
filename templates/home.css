@@ -1,0 +1,19 @@
+.container{
+	background-image: url("https://cdn.ps.emap.com/wp-content/uploads/sites/3/2004/03/heart_heart_attack-440x330.jpg");
+	background-position: center;
+	background-size: cover;
+	height: 100vh;
+}
+
+.info-wrapper{
+	width: 25%;
+	background-color: #1d1d1ba3;
+    padding: 0 8%;
+    /* margin: 30% 0; */
+    margin: 0 50%;
+}
+
+.factor{
+	padding: 5px 0px;
+	margin: 10px auto;
+}
